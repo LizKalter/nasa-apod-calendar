@@ -50,3 +50,28 @@ button {
 .modal-open {
   overflow-y: hidden;
 }
+
+.footer-content {
+  padding: 1rem;
+  font-size: .75rem;
+  text-align: center;
+  
+  a {
+    text-decoration: underline;
+    color: #ccc;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 768px) {
+      float: right;
+  }
+}
+
+.copyright {
+  border-right: 1px solid #c0c5ce;
+  padding-right: 4px;
+}
