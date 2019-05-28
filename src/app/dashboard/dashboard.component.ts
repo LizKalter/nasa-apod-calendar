@@ -13,7 +13,7 @@ import { ErrorMessageService } from '../error-message.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private pictureService: PictureService, private errorMessageService: ErrorMessageService) { }
+  constructor(public pictureService: PictureService, public errorMessageService: ErrorMessageService) { }
 
   ngOnInit() {
     this.pictureService.getPicturesForCurrentMonth();

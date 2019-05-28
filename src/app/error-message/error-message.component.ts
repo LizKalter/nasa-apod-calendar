@@ -10,7 +10,7 @@ import { PictureService } from '../picture.service';
 })
 export class ErrorMessageComponent implements OnInit {
 
-  constructor(private pictureService: PictureService, private errorMessageService: ErrorMessageService) { }
+  constructor(private pictureService: PictureService, public errorMessageService: ErrorMessageService) { }
 
   ngOnInit() {
   }

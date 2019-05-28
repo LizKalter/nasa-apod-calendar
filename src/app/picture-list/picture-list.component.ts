@@ -10,13 +10,11 @@ import { PictureService } from '../picture.service';
 export class PictureListComponent implements OnInit {
   viewType: string = 'calendar'; // 'list' or 'calendar'
   
-  constructor(private pictureService: PictureService) { }
+  constructor(public pictureService: PictureService) { }
 
   // for generating empty squares before the first of the month
   getEmptyFillerDays(): number[] {
     let firstDay = new Date(this.pictureService.pictures[0].date);
-    console.log('getEmptyFillerDays(): ' + firstDay);
-    console.log('getEmptyFillerDays()firstDay.getUTCDay(): ' + firstDay.getUTCDay());
     return new Array(firstDay.getUTCDay());
   }
 

@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
   months: Date[] = new Array();
   years: Date[] = new Array();
 
-  constructor(private pictureService: PictureService) { }
+  constructor(public pictureService: PictureService) { }
 
   setMonths(): void {
     for (var i = 0; i < 12; i++) {
