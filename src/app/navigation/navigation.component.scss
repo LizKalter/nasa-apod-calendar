@@ -55,7 +55,11 @@
 }
 
 .month-label {
-  margin-right: 1rem;
+  margin-right: .5rem;
+
+  @media (min-width: 768px) {
+    margin-right: 1rem;
+  }
 }
 
 .month-selector {
@@ -74,7 +78,7 @@
 .pagination-link {
   background-color: transparent;
   position: relative;
-  margin-top: -.45rem;
+  margin-top: -.3rem;
   z-index: 1;
 
   &:before { // arrows
@@ -83,11 +87,16 @@
     position: absolute;
     width: 0;
     height: 0;
-    top: .4rem;
-    padding: .5rem;
+    top: .625rem;
+    padding: .25rem;
     border: solid #ccc;
     transform: rotate(-45deg);
     transition: all .5s;
+
+    @media (min-width: 768px) {
+      top: .4rem;
+      padding: .5rem;
+    }
   }
 
   &:hover,
@@ -101,29 +110,53 @@
 }
 
 .back-link {
-  padding: .5rem .5rem .5rem 2rem;
+  padding: .5rem .5rem .5rem 1.5rem;
   float: left;
 
   &:before {
-    left: .5rem;
+    left: .75rem;
     border-width: 3px 0 0 3px;
   }
 
   &:hover:before {
-    left: 0;
+    left: .5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-left: 2rem; 
+
+    &:before {
+      left: .5rem;
+    }
+
+    &:hover:before {
+      left: 0;
+    }
   }
 }
 
 .next-link {
-  padding: .5rem 2rem .5rem .5rem;
+  padding: .5rem 1.5rem .5rem .5rem;
   float: right;
 
   &:before {
+    right: .75rem;
     border-width: 0 3px 3px 0;
-    right: .5rem;
   }
 
   &:hover:before {
-    right: 0;
+    right: .5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 2rem; 
+
+    &:before {
+      right: .5rem;
+    }
+
+    &:hover:before {
+      right: 0;
+    }
   }
 }

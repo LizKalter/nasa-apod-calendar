@@ -16,6 +16,14 @@
   padding-bottom: 1rem;
 }
 
+.details {
+  padding: 0 1rem;
+
+  @media (min-width: 960px) {
+    padding: 0;
+  }
+}
+
 iframe {
   display: block;
   margin: 0 auto;
@@ -70,9 +78,9 @@ h2 {
 
   &:after {
     width: 2px;
-    height: .7rem;
+    height: .65rem;
     top: 0rem;
-    left: .22rem;
+    left: .235rem;
     background-color: #ccc;
   }
 
