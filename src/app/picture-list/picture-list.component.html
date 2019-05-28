@@ -1,0 +1,28 @@
+<div *ngIf="pictureService.pictures">
+  <div class="layout-toggle-buttons">
+    <button (click)="viewType='calendar'" [class.selected]="(viewType == 'calendar')">Calendar</button>
+    <button (click)="viewType='list'" [class.selected]="(viewType == 'list')">List</button>
+  </div>
+  <div class="pictures" [class.list]="viewType == 'list'" [class.calendar]="viewType == 'calendar'">
+    <div *ngFor="let i of getEmptyFillerDays()" class="picture empty-date"></div>
+    <div *ngFor="let i of getStartFillerDays()" class="picture past-date">
+      <div *ngIf="viewType == 'calendar'" class="detail date">{{i}}</div>
+    </div>
+    <div *ngFor="let picture of pictureService.pictures" 
+        (click)="pictureDetail.setPicture(picture)" 
+        class="picture"
+        [class.video]="(picture.media_type == 'video')"
+        [class.selected]="picture === pictureDetail.picture" 
+        [style.background-image]="(picture.media_type == 'image' && viewType == 'calendar') ? 'url(' + picture.url + ')' : null">
+      <div *ngIf="viewType == 'list'" class="detail date">{{picture.date | date}}</div>
+      <div *ngIf="viewType == 'calendar'" class="detail date">{{picture.date | date:'d'}}</div>
+      <h3 class="detail title">{{picture.title}}</h3>
+      <div *ngIf="viewType == 'list'" class="detail media-type">{{picture.media_type}}</div>
+    </div>
+    <div *ngFor="let i of getEndFillerDays()" class="picture future-date">
+      <div *ngIf="viewType == 'calendar'" class="detail date">{{i}}</div>
+    </div>
+  </div>
+
+  <app-picture-modal #pictureDetail></app-picture-modal>
+</div>

@@ -1,0 +1,129 @@
+.calendar-selectors {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.calendar-label {
+  vertical-align: middle;
+
+  &:hover,
+  &:focus {
+    select {
+      color: #fff;
+    }
+
+    &:after {
+      border-color: #fff;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    border: solid #ccc;
+    padding: .25rem;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-left: -1rem;
+    margin-top: -.7rem;
+    vertical-align: middle;
+  }
+
+  span {
+    position: absolute;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+  }
+}
+
+.calendar-selector {
+  position: relative;
+  padding-right: 1rem;
+  border: none;
+  appearance: none;
+  z-index: 1;
+  background-color: transparent;
+  color: #ccc;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.month-label {
+  margin-right: 1rem;
+}
+
+.month-selector {
+  padding-right: 1.25rem;
+}
+
+.navigation {
+  position: relative;
+  height: 3rem;
+  width: 24rem;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pagination-link {
+  background-color: transparent;
+  position: relative;
+  margin-top: -.45rem;
+  z-index: 1;
+
+  &:before { // arrows
+    display: inline-block;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: .4rem;
+    padding: .5rem;
+    border: solid #ccc;
+    transform: rotate(-45deg);
+    transition: all .5s;
+  }
+
+  &:hover,
+  &focus {
+    color: #fff;
+
+    &:before {
+      border-color: #fff;
+    }
+  }
+}
+
+.back-link {
+  padding: .5rem .5rem .5rem 2rem;
+  float: left;
+
+  &:before {
+    left: .5rem;
+    border-width: 3px 0 0 3px;
+  }
+
+  &:hover:before {
+    left: 0;
+  }
+}
+
+.next-link {
+  padding: .5rem 2rem .5rem .5rem;
+  float: right;
+
+  &:before {
+    border-width: 0 3px 3px 0;
+    right: .5rem;
+  }
+
+  &:hover:before {
+    right: 0;
+  }
+}

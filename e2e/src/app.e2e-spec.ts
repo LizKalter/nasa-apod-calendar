@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to angular-nasa-apod!');
+    expect(page.getTitleText()).toEqual('Welcome to nasa-apod-calendar!');
   });
 
   afterEach(async () => {

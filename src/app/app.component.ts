@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-nasa-apod';
+  title = 'NASA\'s Astronomy Picture of the Day';
 }

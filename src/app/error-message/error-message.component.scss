@@ -1,0 +1,14 @@
+.error-message {
+  margin: 0 auto;
+  max-width: 800px;
+
+  button {
+    margin: 1rem 0;
+
+    &:hover,
+    &:focus {
+      background-color: #ccc;
+      color: #333;
+    }
+  }
+}

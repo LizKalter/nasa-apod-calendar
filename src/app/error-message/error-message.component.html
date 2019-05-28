@@ -1,0 +1,6 @@
+<div *ngIf="errorMessageService.messages.length" class="error-message">
+  <div *ngFor='let message of errorMessageService.messages'>
+    {{message}}
+  </div>
+  <button (click)="pictureService.getTestPictures(); errorMessageService.clear()">View with sample data</button>
+</div>

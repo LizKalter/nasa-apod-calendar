@@ -1,0 +1,10 @@
+<app-error-message></app-error-message>
+
+<div *ngIf="!pictureService.pictures && !errorMessageService.messages.length" class="loading-message">
+  Loading images
+</div>
+
+<div *ngIf="pictureService.pictures" class="container">
+  <app-navigation></app-navigation>
+  <app-picture-list></app-picture-list>
+</div>

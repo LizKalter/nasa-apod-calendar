@@ -1,0 +1,74 @@
+.pictures.calendar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  place-items: start;
+  grid-gap: 1px;
+  margin-top: .5rem;
+
+  .picture {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+    background-color: #333;
+
+    &.empty-date,
+    &.past-date,
+    &.future-date {
+      cursor: auto;
+    }
+
+    &.empty-date {
+      visibility: hidden;
+    }
+
+    &:before {
+      content: '';
+      padding-bottom: 100%;
+      display: inline-block;
+      width: 1px;
+      height: 0;
+    }
+
+    @media (min-width: 900px) {
+      &:hover {
+        .title {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .detail {
+    position: absolute;
+  }
+
+  .date {
+    top: .25rem;
+    left: .25rem;
+
+    @media (max-width: 767px) {
+      font-size: .75rem;
+    }
+  }
+
+  .title {
+    display: none;
+    width: 90%;
+    top: 1.75rem;
+    left: 0;
+    padding: .5rem .25rem;
+    background-color: rgba(0,0,0,.6);
+  }
+
+  .photo {
+    width: 100%;
+  }
+
+  .video {
+    background-image: url('../../images/video-icon.png');
+    background-size: 66%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

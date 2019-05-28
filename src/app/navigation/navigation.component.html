@@ -1,0 +1,42 @@
+<div class="navigation" *ngIf="pictureService.pictures">
+  <button *ngIf="pictureService.hasPreviousMonth" 
+      class="back-link pagination-link" 
+      (click)="pictureService.showPreviousMonth()" 
+      aria-label="view previous month">
+    Back
+  </button>
+  <div class="calendar-selectors">
+    <label class="calendar-label month-label" for="month-selector">
+      <span>Month</span>
+      <select id="month-selector" 
+          class="calendar-selector month-selector" 
+          (change)="pictureService.changeMonth($event.target.value)">
+        <ng-container *ngFor="let month of months">
+          <option value="{{month | date:'M'}}" 
+              [selected]="(month | date:'M') == (pictureService.pictures[0].date | date:'M')">
+            {{month | date:'MMM'}}
+          </option>
+        </ng-container>
+      </select>
+    </label>
+    <label class="calendar-label" for="year-selector">
+      <span>Year</span>
+      <select id="year-selector" 
+          class="calendar-selector year-selector" 
+          (change)="pictureService.changeYear($event.target.value)">
+        <ng-container *ngFor="let year of years">
+          <option value="{{year | date:'yyyy'}}" 
+              [selected]="(year | date:'yyyy') == (pictureService.pictures[0].date | date:'yyyy')">
+            {{year | date:'yyyy'}}
+          </option>
+        </ng-container>
+      </select>
+    </label>
+  </div>
+  <button *ngIf="pictureService.hasNextMonth" 
+      class="next-link pagination-link" 
+      (click)="pictureService.showNextMonth()" 
+      aria-label="view next month">
+    Next
+  </button>
+</div>

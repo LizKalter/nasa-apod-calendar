@@ -1,0 +1,60 @@
+.pictures.list {
+  display: table;
+  margin: 0 auto;
+  border-spacing: 0 .25rem;
+
+  .picture {
+  	display: table-row;
+    cursor: pointer;
+
+    &.selected {
+      color: #333;
+
+      .detail {
+        background-color: #ccc;
+        border-color: #ccc;
+      }
+    }
+
+    &:hover {
+      .detail {
+        border-color: #ccc;
+      }
+    }
+
+    &.past-date,
+    &.future-date {
+      display: none;
+    }
+  }
+
+  .detail {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #333;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+  }
+
+  .date {
+    border-radius: .5rem 0 0 .5rem;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    white-space: nowrap;
+  }
+
+  .title {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  .media-type {
+    border-radius: 0 .5rem .5rem 0;
+    text-transform: uppercase;
+    font-size: .75rem;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+}
