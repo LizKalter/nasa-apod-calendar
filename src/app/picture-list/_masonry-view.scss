@@ -1,0 +1,33 @@
+.pictures.masonry {
+  column-count: 5;
+  column-gap: .5rem;
+  margin: .5rem;
+
+  .picture {
+    position: relative;
+    margin-bottom: .5rem;
+
+    @media (min-width: 900px) {
+      &:hover {
+        .title {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .title {
+    display: none;
+    position: absolute;
+    width: 90%;
+    top: 1rem;
+    left: 0;
+    padding: .5rem .25rem;
+    background-color: rgba(0,0,0,.6);
+  }
+}

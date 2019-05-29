@@ -1,5 +1,6 @@
 @import 'calendar-view';
 @import 'list-view';
+@import 'masonry-view';
 
 .layout-toggle-buttons {
   text-align: center;
@@ -17,4 +18,8 @@
   .selected {
     border-color: #ccc;
   }
+}
+
+.picture {
+  cursor: pointer;
 }

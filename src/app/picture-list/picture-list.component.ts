@@ -8,7 +8,7 @@ import { PictureService } from '../picture.service';
   styleUrls: ['./picture-list.component.scss']
 })
 export class PictureListComponent implements OnInit {
-  viewType: string = 'calendar'; // 'list' or 'calendar'
+  viewType: string = 'calendar'; // 'list', 'calendar', or 'masonry'
   
   constructor(public pictureService: PictureService) { }
 

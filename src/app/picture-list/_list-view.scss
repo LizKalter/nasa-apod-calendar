@@ -5,7 +5,6 @@
 
   .picture {
   	display: table-row;
-    cursor: pointer;
 
     &.selected {
       color: #333;
@@ -20,11 +19,6 @@
       .detail {
         border-color: #ccc;
       }
-    }
-
-    &.past-date,
-    &.future-date {
-      display: none;
     }
   }
 
