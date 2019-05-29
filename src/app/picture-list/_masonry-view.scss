@@ -1,7 +1,15 @@
 .pictures.masonry {
-  column-count: 5;
+  column-count: 3;
   column-gap: .5rem;
   margin: .5rem;
+
+  @media (min-width: 500px) {
+    column-count: 4;
+  }
+
+  @media (min-width: 768px) {
+    column-count: 5;
+  }
 
   .picture {
     position: relative;
