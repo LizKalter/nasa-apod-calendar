@@ -1,6 +1,6 @@
 <div class="navigation" *ngIf="pictureService.pictures">
   <button *ngIf="pictureService.hasPreviousMonth" 
-      class="back-link pagination-link" 
+      class="button back-link pagination-link" 
       (click)="pictureService.showPreviousMonth()" 
       aria-label="view previous month">
     Back
@@ -34,7 +34,7 @@
     </label>
   </div>
   <button *ngIf="pictureService.hasNextMonth" 
-      class="next-link pagination-link" 
+      class="button next-link pagination-link" 
       (click)="pictureService.showNextMonth()" 
       aria-label="view next month">
     Next

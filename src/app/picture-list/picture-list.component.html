@@ -1,8 +1,8 @@
 <div *ngIf="pictureService.pictures">
   <div class="layout-toggle-buttons">
-    <button (click)="viewType='calendar'" [class.selected]="(viewType == 'calendar')">Calendar</button>
-    <button (click)="viewType='list'" [class.selected]="(viewType == 'list')">List</button>
-    <button (click)="viewType='masonry'" [class.selected]="(viewType == 'masonry')">Grid</button>
+    <button (click)="viewType='calendar'" class="button" [class.selected]="(viewType == 'calendar')">Calendar</button>
+    <button (click)="viewType='list'" class="button" [class.selected]="(viewType == 'list')">List</button>
+    <button (click)="viewType='masonry'" class="button" [class.selected]="(viewType == 'masonry')">Grid</button>
   </div>
   <div class="pictures {{viewType}}">
     <ng-container *ngIf="viewType == 'calendar'">
@@ -11,7 +11,9 @@
         <div class="detail date">{{i}}</div>
       </div>
     </ng-container>
-    <div *ngFor="let picture of pictureService.pictures" 
+    <a href="#" *ngFor="let picture of pictureService.pictures" 
+        role="button"
+        [attr.aria-label]="picture.title"
         (click)="pictureDetail.setPicture(picture)" 
         class="picture"
         [class.video]="(picture.media_type == 'video')"
@@ -19,13 +21,13 @@
         [style.background-image]="(picture.media_type == 'image' && viewType == 'calendar') ? 'url(' + picture.url + ')' : null">
       <ng-container *ngIf="viewType == 'masonry' && picture.media_type == 'image'">
         <img *ngIf="viewType == 'masonry'" alt="{{picture.title}}" src="{{picture.url}}" />
-        <h3 class="title">{{picture.title}}</h3>
+        <span class="title">{{picture.title}}</span>
       </ng-container>
-      <div *ngIf="viewType == 'list'" class="detail date">{{picture.date | date}}</div>
-      <div *ngIf="viewType == 'calendar'" class="detail date">{{picture.date | date:'d'}}</div>
-      <h3 *ngIf="viewType == 'list' || viewType == 'calendar'" class="detail title">{{picture.title}}</h3>
-      <div *ngIf="viewType == 'list'" class="detail media-type">{{picture.media_type}}</div>
-    </div>
+      <span *ngIf="viewType == 'list'" class="detail date">{{picture.date | date}}</span>
+      <span *ngIf="viewType == 'calendar'" class="detail date">{{picture.date | date:'d'}}</span>
+      <span *ngIf="viewType == 'list' || viewType == 'calendar'" class="detail title">{{picture.title}}</span>
+      <span *ngIf="viewType == 'list'" class="detail media-type">{{picture.media_type}}</span>
+    </a>
     <ng-container *ngIf="viewType == 'calendar'">
       <div *ngFor="let i of getEndFillerDays()" class="picture future-date">
         <div class="detail date">{{i}}</div>

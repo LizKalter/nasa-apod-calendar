@@ -1,11 +1,11 @@
-<div *ngIf="picture" class="modal">
+<div *ngIf="picture" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="picture">
-    <button (click)="removePicture()" class="close">Close</button>
+    <button (click)="removePicture()" class="button close" #modalClose>Close</button>
     <img *ngIf="picture.media_type == 'image'" alt="{{picture.title}}" src="{{picture.url}}" class="photo" />
     <iframe *ngIf="(picture.media_type == 'video') && videoUrl" type="text/html" width="640" height="385" frameborder="0" [src]="videoUrl"></iframe>
     <div class="details">
       <p *ngIf="picture.copyright" class="copyright">Copyright: {{picture.copyright}}</p>
-      <h2 *ngIf="picture.title">{{picture.title}}</h2>
+      <h2 *ngIf="picture.title" id="modal-title">{{picture.title}}</h2>
       <p *ngIf="picture.explanation">{{picture.explanation}}</p>
       <a *ngIf="picture.hdurl" [attr.href]="picture.hdurl" class="high-res-link" target="_blank">Download in high res</a>
     </div>

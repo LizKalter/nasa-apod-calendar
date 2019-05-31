@@ -16,7 +16,8 @@
     margin-bottom: .5rem;
 
     @media (min-width: 900px) {
-      &:hover {
+      &:hover,
+      &:focus {
         .title {
           display: inline-block;
         }

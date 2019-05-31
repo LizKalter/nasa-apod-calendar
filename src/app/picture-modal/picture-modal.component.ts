@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef} from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { Picture } from '../picture';
@@ -11,6 +11,7 @@ import { Picture } from '../picture';
 export class PictureModalComponent implements OnInit {
   picture: Picture;
   videoUrl: SafeResourceUrl;
+  @ViewChild('modalClose') modalCloseButton: ElementRef;
 
   constructor(private sanitizer: DomSanitizer, private renderer: Renderer2) { }
 
@@ -22,6 +23,10 @@ export class PictureModalComponent implements OnInit {
     } else {
       this.videoUrl = null;
     }
+    setTimeout(()=> {
+      this.modalCloseButton.nativeElement.focus();
+    }, 200);
+    
   }
 
   removePicture(): void {

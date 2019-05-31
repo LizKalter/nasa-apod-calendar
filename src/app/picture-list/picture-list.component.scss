@@ -8,11 +8,6 @@
   button {
     border: 1px solid #333;
     margin: 0 .125rem;
-
-    &:not(.selected):hover {
-      background-color: #ccc;
-      color: #333;
-    }
   }
 
   .selected {
@@ -21,5 +16,15 @@
 }
 
 .picture {
+  display: inline-block;
   cursor: pointer;
+  border: none;
+  padding: 0;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.title {
+  display: inline-block;
+  font-family: 'Aldrich';
 }

@@ -100,7 +100,7 @@
   }
 
   &:hover,
-  &focus {
+  &:focus {
     color: #fff;
 
     &:before {
@@ -118,7 +118,8 @@
     border-width: 3px 0 0 3px;
   }
 
-  &:hover:before {
+  &:hover:before,
+  &:focus:before {
     left: .5rem;
   }
 
@@ -129,7 +130,8 @@
       left: .5rem;
     }
 
-    &:hover:before {
+    &:hover:before,
+    &:focus:before {
       left: 0;
     }
   }
@@ -144,7 +146,8 @@
     border-width: 0 3px 3px 0;
   }
 
-  &:hover:before {
+  &:hover:before,
+  &:focus:before {
     right: .5rem;
   }
 
@@ -155,7 +158,8 @@
       right: .5rem;
     }
 
-    &:hover:before {
+    &:hover:before,
+    &:focus:before {
       right: 0;
     }
   }
